@@ -1,0 +1,333 @@
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  color: #000;
+}
+
+/*GLOBAL*/
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/*Navigation boxes style*/
+
+a.card-deck {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.fa {
+  font-size: 12rem;
+  margin: 50px 0 10px 0;
+  color: #fff;
+  text-decoration: none;
+}
+
+.container a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.fa:hover {
+  color: rgb(196, 182, 182);
+}
+
+.card-header {
+  max-width: 700px;
+}
+
+.card-deck .card {
+  min-width: 220px;
+}
+
+.card-deck {
+  margin-top: 30px;
+}
+
+.fa-map-marker{
+    font-size:1rem !important;
+    margin:0;
+}
+
+.fa-briefcase {
+  font-size: 12rem;
+  margin: 50px 0 10px 0;
+}
+
+.fa-user-plus {
+  font-size: 12rem;
+  margin: 20px 0 10px 0;
+}
+
+/* MODAL */
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 40%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+/* hide reg */
+#register-form{
+  display:none;
+  padding-top:5px;
+}
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #caaa1a;
+  color: white;
+}
+
+.modal-body {
+  padding: 2px 16px;
+  width: 100%;
+  margin: 3px 0px;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+/*Forgot your password*/
+.forgot-pass {
+  font-size: 10px;
+  margin: 0 15px;
+}
+
+a.forgot-pass {
+  text-decoration: none;
+  color: #caaa1a;
+}
+
+
+
+
+/*Map and buttons for map style*/
+
+.btn-map {
+  width: 30%;
+}
+
+#map {
+  width: 70%;
+  height: 500px;
+}
+
+
+/*Advices style*/
+
+.advices {
+  width: 33%;
+  margin-top: 15px;
+}
+
+
+/*GET HELP STYLE*/
+
+.list-group {
+  margin-top: 30px;
+}
+
+.list-group-item {
+  margin: 10px 0;
+}
+
+.contain-buttons{
+  padding:20px;
+  background-color:rgba(0,0,0,0.1);
+}
+#giveHelpButtons{
+  display:none;
+}
+
+
+
+
+/*RESPONSIVE*/
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 840px) {
+  .modal-content {
+    width: 90%;
+  }
+
+  #map {
+    width: 100%;
+  }
+
+  .btn-map {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .advices {
+    width: 100%;
+    float: left;
+  }
+}
+/*Advices style*/
+
+.advices {
+  width: 33%;
+  margin-top: 15px;
+}
+
+/*ADVICES PAGE STYLE*/
+
+.advices-nav-nav {
+  width: 1000px;
+  display: block;
+  margin-left: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  position: relative;
+  /*if we want it to be sticy maybe*/
+  /* position: sticky;
+  top: 0; */
+}
+
+.advices-nav {
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.advices-nav li {
+  list-style-type: none;
+  float: left;
+  display: inline-block;
+  padding: 0 20px 0 20px;
+  margin: auto;
+
+
+}
+
+
+.advices-text {
+  position: absolute;
+}
+
+
+
+/*GET HELP STYLE*/
+
+.list-group {
+  margin-top: 30px;
+}
+
+.list-group-item {
+  margin: 10px 0;
+}
+
+#profile {
+  color:#caaa1a;
+}
+
+#status {
+  color:#caaa1a;
+}
+
+#profile:hover {
+  color:#e4c436;
+}
+
+#status:hover {
+  color:#917911;
+}
+
+

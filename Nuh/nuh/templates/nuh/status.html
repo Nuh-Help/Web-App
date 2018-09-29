@@ -1,0 +1,122 @@
+{% load staticfiles %}
+<div class="container">
+	<div class="row profile-info">
+		<div class="col">
+
+			<div class="card-body">
+				<form action="#" method="post" id="form" class="status-form">
+
+					<ul class="nav nav-tabs">
+						<li class="active nav-item"><a data-toggle="tab" href="#getHelp" id="getHelpLink" class="custom-nav-link nav-link">Get
+								Help</a></li>
+						<li class="nav-item"><a data-toggle="tab" href="#giveHelp" id="giveHelpLink" class="custom-nav-link nav-link">Give
+								Help</a></li>
+					</ul>
+					<div class="tab-content">
+						<div id="getHelp" class="tab-pane in active">
+							<div class="form-group">
+								<div class="block-elem">
+									<label for="toggle1" class="toggle">
+										<input type="checkbox" id="toggle1" class="toggle__input" value="1">
+										<span class="toggle__button">Ask for food</span><br>
+										<textarea rows="5" cols="30" type="text" name="info7" class="toggle__info" maxlength="500"></textarea>
+									</label>
+								</div>
+								<div class="block-elem">
+									<label for="toggle2" class="toggle">
+										<input type="checkbox" id="toggle2" class="toggle__input" value="2">
+										<span class="toggle__button">Ask for accommodation</span><br>
+										<textarea rows="5" cols="30" type="text" name="info7" class="toggle__info" maxlength="500"></textarea>
+									</label>
+								</div>
+								<div class="block-elem">
+									<label for="toggle3" class="toggle">
+										<input type="checkbox" id="toggle3" class="toggle__input" value="3">
+										<span class="toggle__button">Ask for clothes</span><br>
+
+										<textarea rows="5" cols="30" type="text" name="info7" class="toggle__info"maxlength="500" ></textarea>
+									</label></div>
+								<div class="block-elem">
+									<label for="toggle4" class="toggle">
+										<input type="checkbox" id="toggle4" class="toggle__input" value="4">
+										<span class="toggle__button">Ask for medicine</span><br>
+
+										<textarea rows="5" cols="30" type="text" name="info7" class="toggle__info" maxlength="500"></textarea>
+									</label>
+								</div>
+								<div class="block-elem">
+									<label for="toggle5" class="toggle">
+										<input type="checkbox" id="toggle5" class="toggle__input" value="5">
+										<span class="toggle__button">Ask for something else</span><br>
+										<textarea rows="5" cols="30" type="text" name="info7" class="toggle__info" maxlength="500"></textarea>
+									</label>
+								</div>
+							</div>
+						</div>
+						<div id="giveHelp" class="tab-pane fade">
+
+
+							<div class="form-group">
+								<div class="block-elem">
+									<label for="toggle6" class="toggle">
+										<input type="checkbox" id="toggle6" class="toggle__input" value="1">
+										<span class="toggle__button">Offer food</span>
+												<br>
+										<textarea rows="5" cols="30" type="text" name="info7" class="toggle__info" maxlength="500"></textarea>
+									</label></div>
+								<div class="block-elem">
+									<label for="toggle7" class="toggle">
+										<input type="checkbox" id="toggle7" class="toggle__input" value="2">
+										<span class="toggle__button">Offer accommodation</span>
+												<br>
+										<textarea rows="5" cols="30" type="text" name="info7" class="toggle__info" maxlength="500"></textarea>
+									</label>
+								</div>
+								<div class="block-elem">
+									<label for="toggle8" class="toggle">
+										<input type="checkbox" id="toggle8" class="toggle__input" value="3">
+										<span class="toggle__button">Offer clothes</span>
+												<br>
+										<textarea rows="5" cols="30" type="text" name="info7" class="toggle__info" maxlength="500"></textarea>
+									</label></div>
+								<div class="block-elem">
+									<label for="toggle9" class="toggle">
+										<input type="checkbox" id="toggle9" class="toggle__input" value="4">
+										<span class="toggle__button">Offer medicine</span>
+											<br>
+										<textarea rows="5" cols="30" type="text" name="info7" class="toggle__info" maxlength="500"></textarea>
+									</label>
+								</div>
+								<div class="block-elem">
+									<label for="toggle10" class="toggle">
+										<input type="checkbox" id="toggle10" class="toggle__input" value="5">
+										<span class="toggle__button">Offer something else</span>
+												<br>
+										<textarea rows="5" cols="30" type="text" name="info7" class="toggle__info" maxlength="500"></textarea>
+									</label>
+								</div>
+							</div>
+
+						</div>
+						<button class="btn-primary btn mt-lg-3" id="save">Save </button>
+						<button class="btn btn-link mt-lg-3" id="cancel">cancel</button>
+					</div>
+
+
+				</form>
+				<div class="card bg-light card1" style="max-width: 16rem; width:45%;">
+				</div>
+				<div class="card bg-light card2" style="max-width: 16rem; width:45%;">
+				</div>
+				<a id="show-more-info" class="float-right"><i class="fa fa-info fa-2x"></i></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="{% static 'nuh/js/myProfile.js' %}"></script>
+
+
+
+

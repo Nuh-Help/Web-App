@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" href="{% static 'nuh/bootstrap/css/bootstrap.css' %} " media="screen">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- CUSTOM CSS -->
+  <link rel="stylesheet" href="{% static 'nuh/css/style.css'%}">
+  <title>Noah</title>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="index">Nuh</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <!-- OVO IZNAD JE ZA TEST -->
+            {% if user.is_authenticated %}
+            <a class="nav-link btn btn-danger my-2 my-sm-0" id="1myBtn" href="logout">Log out</a>
+            {% endif %}
+        </form>
+      </div>
+    </nav>
+
+
+
+  <!-- Page navigation - on click to next advice-->
+
+  <div class="advices-nav-nav">
+    <ul class="advices-nav">
+      <li><a href="#earthquaqe" class="btn btn-primary btn-lg">Earthquake</a></li>
+      <li><a href="#flood" class="btn btn-primary btn-lg">Flood</a></li>
+      <li><a href="#tornado" class="btn btn-primary btn-lg">Tornado</a></li>
+    </ul>
+  </div>
+
+  <div class="container">
+
+    <div id="earthquaqe">
+
+      <h4 class="text-center"><strong>Earthquake Safety Tips</strong></h4><br>
+      <h6 class="text-center">How to stay safe when these natural disasters strike</h6><br>
+      <p>Earthquakes are a common occurrence, rumbling below Earth's surface thousands of times every day. But major
+        earthquakes are less common. Here are some things to do to prepare for an earthquake and what to do once the
+        ground starts shaking.</p>
+      <h6 class="text-center"><strong>Safety Tips</strong></h6>
+      <ul>
+        <li>Have an earthquake readiness plan.</li>
+        <li>Consult a professional to learn how to make your home sturdier, such as bolting bookcases to wall studs,
+          installing strong latches on cupboards, and strapping the water heater to wall studs.</li>
+        <li>Locate a place in each room of the house that you can go to in case of an earthquake. It should be a spot
+          where nothing is likely to fall on you, like a doorframe.</li>
+        <li>Keep a supply of canned food, an up-to-date first aid kit, 3 gallons (11.4 liters) of water per person,
+          dust masks and goggles, and a working battery-operated radio and flashlights in an accessible place.</li>
+        <li>Know how to turn off your gas and water mains.</li>
+      </ul>
+      <h6 class="text-center"><strong>If Shaking Begins</strong></h6>
+      <ul>
+        <li>Drop down; take cover under a desk or table and hold on.</li>
+        <li>Stay indoors until the shaking stops and you're sure it's safe to exit.</li>
+        <li>Stay away from bookcases or furniture that can fall on you.</li>
+        <li>Stay away from windows. In a high-rise building, expect the fire alarms and sprinklers to go off during a
+          quake.</li>
+        <li>If you are in bed, hold on and stay there, protecting your head with a pillow.</li>
+        <li>If you are outdoors, find a clear spot away from buildings, trees, and power lines. Drop to the ground.</li>
+        <li>If you are in a car, slow down and drive to a clear place. Stay in the car until the shaking stops.</li>
+      </ul>
+    </div>
+
+    <div id="flood">
+      <h4 class="text-center"><strong>Flood Safety Tips</strong></h4>
+      <h6 class="text-center">Floods are among Earth's most common, and most destructive, natural hazards.</h6><br>
+      <p>Here are some safety tips to prepare for rising water—and what to do once a flood has begun.</p>
+      <h6 class="text-center"><strong>Before a Flood</strong></h6>
+      <ul>
+        <li>Avoid building in a floodplain.</li>
+        <li>Construct barriers (levees, beams, floodwalls) to stop floodwater from entering your home.</li>
+        <li>Seal walls in basements with waterproofing compounds to avoid seepage.</li>
+        <li> If a flood is likely in your area, listen to the radio or television for information.</li>
+        <li>Know the difference between a flood watch and a flood warning. A watch means flooding is possible. A
+          warning means flooding is occurring or will occur soon.</li>
+      </ul>
+      <h6 class="text-center"><strong>When a Flood Is Imminent</strong></h6>
+      <ul>
+        <li>Be prepared! Pack a bag with important items in case you need to evacuate. Don't forget to include needed
+          medications.</li>
+        <li>If advised to evacuate your home, do so immediately.</li>
+        <li>If there is any possibility of a flash flood, move immediately to higher ground.</li>
+        <li>If possible, bring in outdoor furniture and move essential items to an upper floor.</li>
+        <li>Turn off utilities at the main switches or valves if instructed to do so. Disconnect electrical appliances.</li>
+      </ul>
+      <h6 class="text-center"><strong>During a Flood</strong></h6>
+      <ul>
+        <li>Do not walk through moving water. As little as 6 inches (15 centimeters) of moving water can make you fall.</li>
+        <li> If you have to walk in water, wherever possible, walk where the water is not moving. Use a stick to check
+          the firmness of the ground in front of you.</li>
+        <li>Do not drive into flooded areas. If floodwaters rise around your car, abandon the car and move to higher
+          ground if you can do so safely.</li>
+        <li>Do not touch electrical equipment if you are wet or standing in water.</li>
+      </ul>
+      <h6 class="text-center"><strong>After a Flood</strong></h6>
+      <ul>
+        <li>Listen for news reports to learn whether the community's water supply is safe to drink.</li>
+        <li>Avoid floodwaters; water may be contaminated by oil, gasoline, or raw sewage. Water may also be
+          electrically charged from underground or downed power lines.
+        </li>
+        <li>Avoid moving water.</li>
+        <li>Be aware of areas where floodwaters have receded. Roads may have weakened and could collapse under the
+          weight of a car.</li>
+        <li>Stay away from downed power lines, and report them to the power company.</li>
+        <li>Return home only when authorities indicate it is safe.</li>
+        <li> Stay out of any building if it is surrounded by floodwaters.</li>
+        <li>Service damaged septic tanks, cesspools, pits, and leaching systems as soon as possible. Damaged sewage
+          systems are serious health hazards.</li>
+        <li>Clean and disinfect everything that got wet. Mud left from floodwater can contain sewage and chemicals.</li>
+      </ul>
+    </div>
+
+    <div id="tornado">
+      <h4 class="text-center"><strong>Tornado Safety Tips</strong></h4>
+      <h6 class="text-center">How to stay safe when these natural disasters strike</h6><br>
+      <p>A tornado is a violently rotating column of air, in contact with the ground, either pendant from a cumuliform
+        cloud or underneath a cumuliform cloud, and often (but not always) visible as a funnel cloud.</p>
+      <h6><strong>Before</strong></h6>
+      <ul>
+        <li>Assembling an emergency preparedness kit.</li>
+        <li>Creating a household evacuation plan that includes your pets.</li>
+        <li>Staying informed about your community’s risk and response plans.</li>
+        <li>Ensure that every member of your family carries a Safe and Well wallet card.</li>
+        <li>Check emergency kit and replenish any items missing or in short supply. especially medications or other
+          medical supplies. Keep it nearby.</li>
+      </ul>
+      <h6 class="text-center"><strong>Right Before a Tornado</strong></h6>
+      <ul>
+        <li>Listen to local area radio, NOAA radio or TV stations for the latest information and updates.</li>
+        <li>Move to an underground shelter, basement or safe room. If none is available, a small, windowless interior
+          room or hallway on the lowest level of a sturdy building is the safest alternative.</li>
+        <li>Remember: no area of a mobile home is safe during a tornado. If you have access to a sturdy shelter or a
+          vehicle, go there immediately, using your seat belt if driving.</li>
+        <li> Find a local emergency shelter and know the best routes to get there if you need to.</li>
+        <li>Move or secure any of the items on your list of items to bring inside or anything else that can be picked
+          up by the wind.</li>
+        <li>Bring your companion animals indoors and maintain direct control of them.</li>
+      </ul>
+      <h6 class="text-center"><strong>During</strong></h6>
+      <ul>
+        <li>Seek shelter in a basement, shelter or sturdy building.</li>
+        <li>If you cannot quickly walk to a shelter, immediately get into a vehicle and try to drive to the closest
+          sturdy shelter. Remember to buckle your seat belt.</li>
+        <li>Stay away from bridge/highway overpasses.</li>
+        <li>If strong winds and flying debris occurs while driving, pull over and park, keeping your seat belt on and
+          engine running. Put your head down below the windows, covering your head with your hands and a blanket.</li>
+      </ul>
+      <h6 class="text-center"><strong>After</strong></h6>
+      <ul>
+        <li>Let friends and family know you’re safe. - Register yourself as safe on the Safe and Well website</li>
+        <li>If evacuated, return only when authorities say it is safe to do so.</li>
+        <li>Continue listening to local news or a NOAA Weather Radio for updated information and instructions.</li>
+        <li>Check for injuries. If you are trained, provide first aid to persons in need until emergency responders
+          arrive.</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+  <script src="maps.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGlZLDN1CwNz5neFpBl30ZcZgjTYf9kyY&callback=initMap&libraries=places&libraries=visualization"
+    async defer></script>
+
+
+</body>
+
+</html>

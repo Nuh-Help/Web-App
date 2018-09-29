@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'nuh/bootstrap/css/bootstrap.css' %}" media="screen">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'nuh/bootstrap/bootstrap-social-gh-pages/bootstrap-social.css' %}">
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="{% static 'nuh/css/style.css' %}">
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <title>Nuh</title>
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION BAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Nuh</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+            aria-controls="navbarColor01"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            {% csrf_token %}
+            {% if user.is_authenticated %}
+            <a class="nav-link btn btn-danger my-2 my-sm-0" id="myProfile" href="user_profile"
+               style="margin: 0 15px 0 0;">My profile </a>
+            <a class="nav-link btn btn-danger mr-2 ml-2 my-2 my-sm-0" id="updateLocation" href="#"><i
+                    class="fa fa-map-marker"></i> Update location</a>
+            <a class="nav-link btn btn-danger my-2 my-sm-0" id="Btn" href="/nuh/logout">Log out</a>
+            {% else %}
+            <a class="nav-link btn btn-danger my-2 my-sm-0" id="myBtn" href="#">Log in</a>
+            {% endif %}
+        </form>
+    </div>
+</nav>
+
+
+<!-- MODAL -->
+<div class="section">
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Log in / Register</h3>
+                <span class="close">&times;</span>
+            </div>
+            <p class="text-center"><strong>Log in</strong></p>
+            <form method="post" action="login">
+                {% csrf_token %}
+                <div class="container">
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="username" id="for-username">Username:</label>
+                            <input type="text" name="username" class="form-control" id="username"
+                                   placeholder="Enter your username"
+                                   required>
+                            <label for="password" id="for-password">Password:</label>
+                            <input type="password" name="password" id="password" placeholder="Enter your password"
+                                   class="form-control"
+                                   required><br>
+                            <input type="submit" value="login" id="submit" class="btn btn-primary">
+                            <a href="#" class="forgot-pass">FORGOT YOU PASSWORD?</a>
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
+            <button type="submit" id="toggle_reg" class="btn btn-primary">Register</button>
+            <form method="post" id="register-form" action="register">
+                {% csrf_token %}
+                <div class="container">
+                    <fieldset>
+                        <div class="form-group">
+                            <p><label for="id_username">Enter your username:</label>
+                                <input type="text" name="username" class="form-control" maxlength="100" minlength="4"
+                                       placeholder="Enter your username"
+                                       required id="id_username"></p>
+                            <p><label for="id_first_name">Enter your first name:</label>
+                                <input type="text" name="first_name" placeholder="Enter name" maxlength="100"
+                                       class="form-control"
+                                       minlength="4" required id="id_first_name"></p>
+                            <p><label for="id_last_name">Enter your last name:</label>
+                                <input type="text" name="last_name" placeholder="Enter your last name" maxlength="100"
+                                       class="form-control"
+                                       minlength="4" required id="id_last_name"></p>
+                            <p><label for="id_email">Enter e-mail:</label>
+                                <input type="email" name="email" class="form-control" placeholder="Enter your email"
+                                       required id="id_email"></p>
+                            <p><label for="id_password">Enter password:</label>
+                                <input type="password" name="password" class="form-control"
+                                       placeholder="Enter your password"
+                                       required id="id_password"></p>
+                            <p><label for="id_password2">Re-enter password:</label>
+                                <input type="password" name="password2" class="form-control"
+                                       placeholder="Repeat your password"
+                                       required id="id_password2"></p>
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- NAVIGATION BOXES -->
+
+<div class="container">
+    <div class="card-deck mb-3 text-center">
+        <a href="#" id="gethalp" onClick='getHelpMarkers(event)'>
+            <div class="card mb-4 text-white shadow-sm bg-danger">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">GET HELP</h4>
+                </div>
+                <i class="fa fa-briefcase"></i>
+
+        </a>
+    </div>
+    <a href="#" id="givehalp" onClick='giveHelpMarkers(event)'>
+        <div class="card mb-4 text-white shadow-sm bg-info">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">GIVE HELP</h4>
+            </div>
+            <div class="card-body">
+                <i class="fa fa-user-plus"></i>
+            </div>
+    </a>
+
+</div>
+
+
+<!-- Checking if the person is in danger -->
+<div class="alert alert-dismissible alert-warning">
+    <h4 class="alert-heading">ARE YOU IN DANGER?</h4>
+    <p class="mb-0">If you are in danger you can say so and people who have the same app will see it and will know where you are,
+        so they can help you!
+        <br> If you are willing to offer help and let everyone know, let them know!
+    </p>
+</div>
+
+
+<!--MAP  -->
+
+
+<div id="map"></div>
+<div class="container btn-map">
+    <button class="btn btn-social ml-auto mr-auto btn-block btn-danger map-btn" id="getHelp">Ask For Help</button>
+    <div class="contain-buttons" id="getHelpButtons">
+        <button class="btn btn-social ml-auto mr-auto btn-block btn-primary map-btn" id="getAccommodation">Accommodation
+        </button>
+        <button class="btn btn-social ml-auto mr-auto btn-block btn-secondary map-btn" id="getFood">Food</button>
+        <button class="btn btn-social ml-auto mr-auto btn-block btn-success map-btn" id="getClothes">Clothes</button>
+        <button class="btn btn-social ml-auto mr-auto btn-block btn-warning map-btn" id="getMedicine">Medicine
+        </button>
+        <button class="btn btn-social ml-auto mr-auto btn-block btn-info map-btn" id="getOther">Other</button>
+    </div>
+
+    <button class="btn btn-social ml-auto mr-auto btn-block btn-danger map-btn" id="giveHelp">Offer Help</button>
+    <div class="contain-buttons" id="giveHelpButtons">
+        <button class="btn btn-social ml-auto mr-auto btn-block btn-primary map-btn" id="giveAccommodation">Accommodation
+        </button>
+        <button class="btn btn-social ml-auto mr-auto btn-block btn-secondary map-btn" id="giveFood">Food</button>
+        <button class="btn btn-social ml-auto mr-auto btn-block btn-success map-btn" id="giveClothes">Clothes
+        </button>
+        <button class="btn btn-social ml-auto mr-auto btn-block btn-warning map-btn" id="giveMedicine">Medicine
+        </button>
+        <button class="btn btn-social ml-auto mr-auto btn-block btn-info map-btn" id="giveOther">Other</button>
+    </div>
+    <button class="btn btn-social ml-auto mr-auto btn-block btn-success map-btn" id="clear">Clear</button>
+    <button class="btn btn-social ml-auto mr-auto btn-block btn-dark map-btn" id="worldView">World View</button>
+</div>
+
+<!-- Advices -->
+
+<div class="container">
+    <h4 style="margin-top: 30px;">Advices that can help in case of dissaster</h4>
+</div>
+
+<div class="card border-primary mb-3 advices">
+    <div class="card-header">Earthquake</div>
+    <div class="card-body">
+        <h4 class="card-title">Safety Tips</h4>
+        <ul class="earthquaqe">
+            <li>Consult a professional to learn how to make your home sturdier</li>
+            <li>Locate a place in each room of the house that you can go to in case of an earthquake.</li>
+            <li>Know how to turn off your gas and water mains.</li>
+        </ul>
+        <h4 class="card-title">If Shaking Begins</h4>
+        <ul class="earthquaqe">
+            <li>Drop down; take cover under a desk or table and hold on.</li>
+            <li>Stay indoors until the shaking stops and you're sure it's safe to exit.</li>
+            <li>Stay away from bookcases or furniture that can fall on you.</li>
+        </ul>
+
+    </div>
+    <a href="advices" class="btn btn-dark">Read More</a>
+</div>
+
+<div class="card border-secondary mb-3 advices">
+    <div class="card-header">Flood</div>
+    <div class="card-body">
+        <h4 class="card-title">Before a Flood</h4>
+        <ul class="fluds">
+            <li>Avoid building in a floodplain.</li>
+            <li>Construct barriers (levees, beams, floodwalls) to stop floodwater from entering your home.</li>
+            <li>If a
+                flood is likely in your area, listen to the radio or television for information.
+            </li>
+        </ul>
+        <h4 class="card-title">When a Flood Is Imminent</h4>
+        <ul class="fluds">
+            <li>Be prepared! Pack a bag with important items in case you need to evacuate. Don't forget to include
+                needed
+                medications.
+            </li>
+            <li>If advised to evacuate your home, do so immediately.</li>
+            <li>Turn off utilities at the main switches or valves if instructed to do so.</li>
+        </ul>
+    </div>
+    <a href="advices" class="btn btn-dark">Read More</a>
+</div>
+<div class="card border-success mb-3 advices">
+    <div class="card-header">Tornado</div>
+    <div class="card-body">
+        <h4 class="card-title">Before tornado</h4>
+        <ul class="fluds">
+            <li>Identify a safe place in your home where household members and pets will gather during a tornado</li>
+            <li>In a high-rise building, pick a hallway in the center of the building.</li>
+        </ul>
+        <h4 class="card-title">After</h4>
+        <ul class="fluds">
+            <li>Let friends and family know you’re safe.</li>
+            <li>If evacuated, return only when authorities say it is safe to do so.</li>
+            <li>Check for injuries. If you are trained, provide first aid to persons in need until emergency responders
+                arrive.
+            </li>
+        </ul>
+    </div>
+    <a href="advices" class="btn btn-dark">Read More</a>
+</div>
+
+
+<!-- Optional JavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+"
+<script src="{% static 'nuh/js/app.js' %}"></script>
+<script src="{% static 'nuh/js/maps.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGlZLDN1CwNz5neFpBl30ZcZgjTYf9kyY&callback=initMap&libraries=places&libraries=visualization"
+        async defer></script>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
