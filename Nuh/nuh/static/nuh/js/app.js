@@ -4,6 +4,7 @@
  * Retrieving csrftoken from cookies
  *
  */
+// pull req 2 xD
 function getCookie(name) {
     var cookieValue = null;
     if (document.cookie && document.cookie !== '') {
