@@ -7,6 +7,8 @@ from . import views
 # path links the url to specific view while name can be later reused instead of hard_coding the url
 # even tho that is not used in this project very much, at all actually
 app_name = 'nuh'
+
+# url paths
 urlpatterns = [
     path('get_accommodation_need_help', views.get_accommodation_need_help),
     path('get_food_need_help', views.get_food_need_help),
