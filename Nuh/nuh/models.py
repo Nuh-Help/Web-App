@@ -35,6 +35,7 @@ class GiveAccommodation(models.Model):
 # Base model that stores description and bool
 # field of type of need/help that 'the' person needs and
 # description function that returns the description of help/need if does is true
+# one of the classes that represents a model in a database
 class GiveClothes(models.Model):
     what_clothes = models.CharField(max_length=250)
     does = models.fields.BooleanField(default=False)
